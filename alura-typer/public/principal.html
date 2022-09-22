@@ -6,12 +6,19 @@
 </head>
 <body>
     <h1>Alura Typer</h1>
-    <p class="frase">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi velit at alias ab officia non nemo corporis 
-    consequuntur obcaecati inventore officiis aut unde sint aliquam ut dolor qui, laudantium sed!</p>
+    <p class="frase">Lorem ipsum dolor sit amet consectetur adipisicing elit Commodi velit at alias ab officia non nemo corporis consequuntur obcaecati inventore officiis aut unde sint aliquam ut dolor qui</p>
 
     <ul>
-        <li>30 palavras</li>
-        <li>10 segundos</li>
+        <li><span id="tamanho-frase"></span> palavras</li>
+        <li><span id="tempo-digitacao">10</span> segundos</li>
+    </ul>
+
+    <textarea class="campo-digitacao"  cols="40" rows="8"></textarea>
+    <button id="botao-reiniciar">Reiniciar Jogo</button>
+
+    <ul>
+        <li><span id="contador-caracteres">0</span> caracteris</li>
+        <li><span id="contador-palavras">0</span> palavras</li>
     </ul>
 
     <script src="js/jquery.js"></script>
