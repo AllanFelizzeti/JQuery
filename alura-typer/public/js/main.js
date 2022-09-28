@@ -68,19 +68,6 @@ function inicializaMarcadores(){
     })
 }
 
-function inserePlacar(){
-    var corpotabela = $(".placar").find("tbody")
-    var usuario = "Douglas"
-    var numPalavras = $("#contador-palavras").text()
-
-    var linha = "<tr>"+
-                    "<td>"+ usuario +"</td>"+
-                    "<td>"+ numPalavras +"</td>"+
-                "</tr>";
-
-    corpotabela.append(linha)
-}
-
 function reiniciaJogo(){
     campo.attr("disabled", false)
     campo.val("")
