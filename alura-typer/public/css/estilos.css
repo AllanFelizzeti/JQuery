@@ -25,3 +25,11 @@
 .borda-vermelha{
     border: 6px solid red;
 }
+
+.placar{
+    display: none;
+}
+
+body{
+    overflow: scroll;
+}
