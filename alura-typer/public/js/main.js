@@ -1,4 +1,4 @@
-var TempoInicial = $("#tempo-digitacao").text()
+var tempoInicial = $("#tempo-digitacao").text()
 var campo = $(".campo-digitacao")
 
 //Atalho vc pode declarar direto $(function( )) 
@@ -9,6 +9,11 @@ $(document).ready(function(){
     inicializaMarcadores()
     $("#botao-reiniciar").click(reiniciaJogo)
 })
+
+function atualizaTempoInicial(tempo){
+    tempoInicial = tempo
+    $("#tempo-digitacao").text(tempo)
+}
 
 function atualizaTamanhoFrase(){
     var frase = $(".frase").text()
@@ -29,8 +34,8 @@ function inicilizaContadores(){
 }
 
 function InicializaCronometro(){
-    var tempoRestante = $("#tempo-digitacao").text()
     campo.one("focus", function() {
+        var tempoRestante = $("#tempo-digitacao").text()
         var cronometroID = setInterval(function(){
             tempoRestante --
             console.log(tempoRestante)
@@ -54,8 +59,8 @@ function finalizaJogo(){
 // })
 
 function inicializaMarcadores(){
-    var frase = $(".frase").text()
     campo.on("input", function(){
+        var frase = $(".frase").text()
         var digitado = campo.val()
         var comparavel = frase.substr(0,digitado.length)
         if(digitado == comparavel){
@@ -73,7 +78,7 @@ function reiniciaJogo(){
     campo.val("")
     $("#contador-palavras").text("0")
     $("#contador-caracteres").text("0")
-    $("#tempo-digitacao").text(TempoInicial)
+    $("#tempo-digitacao").text(tempoInicial)
     InicializaCronometro()
     campo.toggleClass("campo-desativado")
     campo.removeClass("borda-vermelha")
